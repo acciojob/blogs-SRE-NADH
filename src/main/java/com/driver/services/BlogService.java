@@ -27,13 +27,11 @@ public class BlogService {
         Blog blog= new Blog();
         blog.setContent(content);
         blog.setTitle(title);
+        blog.setPubDate(new Date());
         blog.setUser(user);
-        if(user.getBlogList()==null){
-            user.setBlogList(new ArrayList<>());
-        }
         user.getBlogList().add(blog);
         User savedUser = userRepository1.save(user);
-       return savedUser.getBlogList().get(savedUser.getBlogList().size()-1);
+       return blog;
     }
 
     public void deleteBlog(int blogId){
