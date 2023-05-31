@@ -29,8 +29,8 @@ public class BlogService {
         blog.setTitle(title);
         blog.setUser(user);
         user.getBlogList().add(blog);
-       Blog savedBlog = blogRepository1.save(blog);
-       return savedBlog;
+       User savedUser = userRepository1.save(user);
+       return savedUser.getBlogList().get(savedUser.getBlogList().size()-1);
     }
 
     public void deleteBlog(int blogId){

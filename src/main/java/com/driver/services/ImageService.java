@@ -22,8 +22,8 @@ public class ImageService {
         image.setDimensions(dimensions);
         image.setBlog(blog);
         blog.getImageList().add(image);
-        Image savedImage = imageRepository2.save(image);
-        return savedImage;
+        Blog savedBlog = blogRepository2.save(blog);
+        return savedBlog.getImageList().get(savedBlog.getImageList().size()-1gi);
         //add an image to the blog
     }
 
