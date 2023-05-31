@@ -14,6 +14,7 @@ import java.util.logging.Level;
 @Table(name = "blog")
 public class Blog {
     public Blog() {
+        imageList=new ArrayList<>();
     }
 
     @Id

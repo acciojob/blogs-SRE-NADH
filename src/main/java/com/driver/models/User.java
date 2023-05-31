@@ -24,6 +24,7 @@ public class User {
    private List<Blog> blogList = new ArrayList<>();
 
     public User() {
+        blogList=new ArrayList<>();
     }
 
     public User(int id, String userName, String password, String firstName, String lastName, List<Blog> blogList) {
