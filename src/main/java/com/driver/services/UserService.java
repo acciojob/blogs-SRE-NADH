@@ -28,6 +28,7 @@ public class UserService {
     public User updateUser(Integer id, String password){
         User user = userRepository3.findById(id).get();
         user.setPassword(password);
-        return user;
+        User savedUser = userRepository3.save(user);
+        return savedUser;
     }
 }
