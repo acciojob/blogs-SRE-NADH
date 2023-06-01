@@ -27,10 +27,10 @@ public class BlogService {
         Blog blog= new Blog();
         blog.setContent(content);
         blog.setTitle(title);
+        blog.setPubDate(new Date()); // set date g
         blog.setUser(user);
         user.getBlogList().add(blog);
         Blog blog1 = blogRepository1.save(blog);
-
         // return the blog with out saving
         return blog;
     }
