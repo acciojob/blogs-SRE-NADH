@@ -30,7 +30,9 @@ public class BlogService {
         blog.setUser(user);
         user.getBlogList().add(blog);
         Blog blog1 = blogRepository1.save(blog);
-        return blog1;
+
+        // return the blog with out saving
+        return blog;
     }
 
     public void deleteBlog(int blogId){
