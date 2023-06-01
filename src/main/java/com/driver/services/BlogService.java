@@ -9,6 +9,7 @@ import com.driver.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -27,11 +28,13 @@ public class BlogService {
         Blog blog= new Blog();
         blog.setContent(content);
         blog.setTitle(title);
-        blog.setPubDate(new Date()); // set date g
+       // LocalDate localDate = LocalDate.now();
+        Date date = new Date();
+        blog.setPubDate(date);
         blog.setUser(user);
         user.getBlogList().add(blog);
         Blog blog1 = blogRepository1.save(blog);
-        // return the blog with out saving
+        // return the blog without saving
         return blog;
     }
 
